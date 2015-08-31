@@ -56,8 +56,13 @@ public class VLogon extends JFrame{
 				mlogon.setSenha(jsenha.getText());
 				
 				CLogon clogon = new CLogon(mlogon);
-							
 				
+				if(clogon.retorno == 0){
+					jlogon.setText("");
+					jsenha.setText("");
+				}else if(clogon.retorno == 1){
+					dispose();
+				}
 			}
 		});
 		
