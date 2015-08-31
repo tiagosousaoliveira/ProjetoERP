@@ -2,22 +2,24 @@ package br.com.DnSystem.Model;
 
 public class MLogon {
 
-	String nome;
-	String senha;
+	public String nome;
+	public String senha;
 	
 	
-	private String getNome() {
+	public String getNome() {
 		return nome;
 	}
-	private void setNome(String nome) {
+	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	private String getSenha() {
+	public String getSenha() {
 		return senha;
 	}
-	private void setSenha(String senha) {
+	public void setSenha(String senha) {
 		this.senha = senha;
 	}
 	
+	
+
 
 }

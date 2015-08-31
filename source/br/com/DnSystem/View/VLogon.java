@@ -9,12 +9,14 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import br.com.DnSystem.Control.CLogon;
+import br.com.DnSystem.Model.MLogon;
 
-public class VLogon extends JFrame {
+
+public class VLogon extends JFrame{
 	
 	JTextField 	   				jlogon = new JTextField();
 	JPasswordField 				jsenha = new JPasswordField();
@@ -23,11 +25,10 @@ public class VLogon extends JFrame {
 	JLabel						lsenha;
 	
 	
-	public VLogon() {
+	public VLogon(){
 		// TODO Auto-generated constructor stub
 		super("Tela de Login");
 		
-		this.getContentPane();
 		this.setLayout(null);
 		
 		jlogon.setBounds(100, 70, 180, 22);
@@ -50,8 +51,12 @@ public class VLogon extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				
-				verifica(jlogon, jsenha);
+				MLogon mlogon = new MLogon();
+				mlogon.setNome(jlogon.getText());
+				mlogon.setSenha(jsenha.getText());
 				
+				CLogon clogon = new CLogon(mlogon);
+							
 				
 			}
 		});
@@ -76,14 +81,4 @@ public class VLogon extends JFrame {
 		new VLogon();
 	}
 	
-	public void verifica(JTextField nom, JPasswordField sen){
-		
-		nom.equals(jlogon.getText());
-		sen.equals(jsenha.getText());
-		
-		JOptionPane.showMessageDialog(null, "Nome utilizaso" +nom);
-		JOptionPane.showMessageDialog(null, "Senha utilizada" +sen);
-		
-	}
-
 }

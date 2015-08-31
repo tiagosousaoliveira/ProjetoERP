@@ -5,20 +5,24 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Logger;
+
 
 import javax.swing.JOptionPane;
 
-
 public class Conexao{
-	Connection con;
-	ResultSet  res;
-	Statement  stm;
+	public Connection con;
+	public ResultSet  res;
+	public Statement  stm;
 	
 	String usuario="sa";
 	String senha ="vls021130";
 	String Driver="jdbc:sqlserver://localhost:1433;"+"databaseName=DMD";
 	
+	String driverName = "com.mysql.jdbc.Driver";   
+	String usuar="root";
+	String passw ="123456";
+//	String drive="jdbc:mysql://" + serverName + "/" + mydatabase";	
+	String drive="jdbc:mysql://localhost:3306/DN";
 
 	public void Conexao() {
 		try {
@@ -29,6 +33,22 @@ public class Conexao{
 		catch (SQLException e) {
 			JOptionPane.showMessageDialog(null,e.getMessage());
 			
+		}
+		
+	}
+	
+	public void ConexaoMyql() {
+		try {
+			Class.forName(driverName);  	 
+			con = DriverManager.getConnection(drive,usuar,passw);
+			JOptionPane.showMessageDialog(null, "Conexão efetada com sucesso");
+		}
+		catch (SQLException e) {
+			JOptionPane.showMessageDialog(null,e.getMessage());
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 	}
