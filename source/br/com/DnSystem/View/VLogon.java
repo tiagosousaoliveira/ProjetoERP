@@ -24,7 +24,6 @@ public class VLogon extends JFrame{
 	JLabel						lusuar;
 	JLabel						lsenha;
 	
-	
 	public VLogon(){
 		// TODO Auto-generated constructor stub
 		super("Tela de Login");
@@ -73,6 +72,7 @@ public class VLogon extends JFrame{
 		add(lusuar);
 		add(lsenha);
 		
+
 		setVisible(true);
 		setResizable(false);
 		setSize(400,200);
