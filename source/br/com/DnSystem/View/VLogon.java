@@ -77,7 +77,7 @@ public class VLogon extends JFrame{
 		setResizable(false);
 		setSize(400,200);
 		setLocationRelativeTo(null);  
-		
+		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		
 	}
 

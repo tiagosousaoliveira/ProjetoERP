@@ -11,6 +11,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JToolBar;
 
 public class VHome extends JFrame{
@@ -20,7 +22,11 @@ public class VHome extends JFrame{
 	JButton  Financeiro   = new JButton ();
 	JLabel	 lcadastros;  
 	JLabel	 lfinanceiro;
-	JMenu
+	
+	JMenu    menu = new JMenu();
+	
+	
+	
 	public VHome() {
 		// TODO Auto-generated constructor stub
 		super("Tela Inicial");
@@ -38,9 +44,8 @@ public class VHome extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				
-				
-				
+							
+				VGerencia vgerencia = new VGerencia();
 			}
 		});
 		
@@ -70,7 +75,7 @@ public class VHome extends JFrame{
 		setSize(tela);
 		setResizable(false);
 		setLocationRelativeTo(null); 		
-		
+		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 	}
 
 }

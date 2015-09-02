@@ -30,7 +30,7 @@ public class CLogon{
 				ResultSet res = stm.executeQuery();   
 
 				if(res.next()){
-					JOptionPane.showMessageDialog(null, "Bem Vindo  "+""+ res.getString("nome"));
+					JOptionPane.showMessageDialog(null, "Bem Vindo  "+""+ res.getString("nome_usuario"));
 					VHome vhome = new VHome();
 					int i=0;
 					retorn(i);
