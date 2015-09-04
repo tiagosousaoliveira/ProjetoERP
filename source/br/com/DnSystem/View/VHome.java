@@ -20,10 +20,9 @@ public class VHome extends JFrame{
 	JToolBar barra 		  = new JToolBar();
 	JButton  cadastros    = new JButton ();
 	JButton  Financeiro   = new JButton ();
-	JLabel	 lcadastros;  
-	JLabel	 lfinanceiro;
-	
-	JMenu    menu = new JMenu();
+	JButton  compras	  = new JButton ();
+	JButton  estoque	  = new JButton ();
+	JMenu    menu 		  = new JMenu();
 	
 	
 	
@@ -36,26 +35,24 @@ public class VHome extends JFrame{
         Dimension dw = getSize(); 
         barra.setSize((ds.width - dw.width),50);
 
-		ImageIcon log = new ImageIcon(getClass().getResource("../img/livros.png"));
-		log.setImage(log.getImage().getScaledInstance(50, 35,35));
-		cadastros = new JButton(log);
+		ImageIcon liv = new ImageIcon(getClass().getResource("../img/livros.png"));
+		liv.setImage(liv.getImage().getScaledInstance(50, 35,35));
+		cadastros = new JButton(liv);
 		cadastros.setToolTipText("Menu de Cadastros");
+		cadastros.setBorder(null);
 		cadastros.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-							
 				VGerencia vgerencia = new VGerencia();
 			}
 		});
-		
-		
-		
-		
-		ImageIcon sen = new ImageIcon(getClass().getResource("../img/dinheiro.png"));
-		sen.setImage(sen.getImage().getScaledInstance(50, 35,35));
-		Financeiro = new JButton(sen);
+				
+		ImageIcon fin = new ImageIcon(getClass().getResource("../img/dinheiro.png"));
+		fin.setImage(fin.getImage().getScaledInstance(50, 35,35));
+		Financeiro = new JButton(fin);
 		Financeiro.setToolTipText("Modulo Financeiro");
+		Financeiro.setBorder(null);
 		Financeiro.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -64,9 +61,36 @@ public class VHome extends JFrame{
 			}
 		});
 		
+		ImageIcon com = new ImageIcon(getClass().getResource("../img/compras.png"));
+		com.setImage(com.getImage().getScaledInstance(50, 35,35));
+		compras = new JButton(com);
+		compras.setToolTipText("Modulo Compras");
+		compras.setBorder(null);
+		compras.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				VGerencia vgerencia = new VGerencia();
+			}
+		});
+		
+		ImageIcon est = new ImageIcon(getClass().getResource("../img/estoque.png"));
+		est.setImage(est.getImage().getScaledInstance(50, 35,35));
+		estoque = new JButton(est);
+		estoque.setToolTipText("Modulo de Estoque");
+		estoque.setBorder(null);
+		estoque.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				VGerencia vgerencia = new VGerencia();
+			}
+		});
 
 		barra.add(cadastros);
 		barra.add(Financeiro);
+		barra.add(compras);
+		barra.add(estoque);
 		add(barra);
 		
 		Dimension tela = Toolkit.getDefaultToolkit().getScreenSize();  
